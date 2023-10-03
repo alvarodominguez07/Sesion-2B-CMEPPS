@@ -54,4 +54,4 @@ public float calculoNominaBruta(TipoEmpleado tipo, float ventasMes, float horasE
 
 1 test si el salario es menor de 0, mayor que 0, mayor que 1000, mayor que 1500
 
-igual para las retenciones
+igual para las retenciones*/
