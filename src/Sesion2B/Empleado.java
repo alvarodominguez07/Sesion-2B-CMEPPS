@@ -11,34 +11,44 @@ public class Empleado {
 	public enum TipoEmpleado{Vendedor, Encargado};
 	
 	
-public float calculoNominaBruta(TipoEmpleado tipo, float ventasMes, float horasExtra) 
+public static float calculoNominaBruta(TipoEmpleado tipo, float ventasMes, float horasExtra) 
 	{
 	float salario=0;
 		if(tipo==TipoEmpleado.Vendedor) //Calculo la nomina de vendedor
 		{
-			if(ventasMes<1000)
+			if(ventasMes<1000 && ventasMes>=0)
 				salario=2000;
-			else
-				if(ventasMes<1500)
-					salario=2000+100;
-				else
+			else if(ventasMes<1500 && ventasMes>=1000)
+				salario=2000+100;
+		    else if(ventasMes>1500)
 					salario=2000+200;
+		    else
+		    	salario=-1;
+			
+			if(horasExtra>0)
+				  salario=salario+horasExtra*30;
 		}
 		else if (tipo==TipoEmpleado.Encargado) //calculo la nomina de encargado
 		{
-			if(ventasMes<1000)
+			if(ventasMes<1000 && ventasMes>=0)
 				salario=2500;
-			else
-				if(ventasMes<1500)
-					salario=2500+100;
-				else
+			else if(ventasMes<1500 && ventasMes>=1000)
+				salario=2500+100;
+		    else if(ventasMes>1500)
 					salario=2500+200;
+		    else
+		    	salario=-1;
+			
+			if(horasExtra>0)
+				  salario=salario+horasExtra*30;
 		}
-		return salario;
+		
+		
+			return  salario;
 	}
- public float calculoNominaNeta(float nominaBruta)
+ public static float calculoNominaNeta(float nominaBruta)
 {
-	 float retencion=0;
+	float retencion=0;
 	if(nominaBruta>2100 && nominaBruta<2500)
 	{
 		retencion=0.15f;
