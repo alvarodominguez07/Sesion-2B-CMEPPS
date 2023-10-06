@@ -13,9 +13,7 @@ import Sesion2B.Empleado.TipoEmpleado;
 
 class EmpleadoTest {
 	
-	public enum TipoEmpleado{Vendedor, Encargado};
-	private float ventas;
-	private float horas;
+
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -60,7 +58,7 @@ class EmpleadoTest {
 	@Test
 	void testCalculoNominaBrutaOtro() {
 		float expected=0;
-		float actual=Empleado.calculoNominaBruta(null, ventas, horas);
+		float actual=Empleado.calculoNominaBruta(null,0 , 0);
 		assertEquals(expected, actual);
 	}
 	@Test
